@@ -1,11 +1,11 @@
 # CI CD Jenkins -> AWS
 
-Give a brief overview of the project.
+This is a basic application used to showcase CI-CD using Jenkins, implemented on an AWS EC2 Instance.
 
 ## Demo
 
 ​
-Research how you can create Gifs from screen recordings, demo the following:
+![Gif Image](https://github.com/adampaulsackfield/ci-cd-aws/images/aws.gif)
 ​
 
 - CI
