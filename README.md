@@ -5,7 +5,7 @@ This is a basic application used to showcase CI-CD using Jenkins, implemented on
 ## Demo
 
 ​
-![Gif Image](https://github.com/adampaulsackfield/ci-cd-aws/images/aws.gif)
+![](https://github.com/adampaulsackfield/ci-cd-aws/blob/main/images/aws.gif)
 ​
 
 - CI
