@@ -1,8 +1,6 @@
 # CI CD Jenkins -> AWS
 
-​
 Give a brief overview of the project.
-​
 
 ## Demo
 
