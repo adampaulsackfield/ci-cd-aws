@@ -1,52 +1,44 @@
 # CI CD Jenkins -> AWS
 
-This is a basic application used to showcase CI-CD using Jenkins, implemented on an AWS EC2 Instance.
+This is a basic application used to showcase **CI-CD** using Jenkins, implemented on an **AWS EC2 Instance**.
 
 ## Demo
 
-​
-
-![](https://github.com/adampaulsackfield/ci-cd-aws/blob/main/images/aws.gif)
-
-​
+Below is a demonstration of the **CI-CD** pipeline in action:
 
 - CI
-  - Make a change to the project on your feature branch -> push changes to repo
-  - Show pipeline running in Jenkins -> Show main branch has been updated
+  - Project is updated and the changes are pushed to the `feature-branch`
+  - Jenkins catches this and runs `npm test` and if tests pass it merges with `main`.
 - CD
-  - Make a change to the project on your feature branch -> push changes to repo
-  - Show pipeline running in Jenkins -> Show ci pipeline triggers build pipeline
-  - Show updated instance
-    ​
-    _Feel free to add more to the points above_
-    ​
+  - Once a branch is merged with `main`, a webhook is triggered for Jenkins
+  - The application is then built and the changes can be seen live on the site.
 
 ---
 
+![GIF](https://github.com/adampaulsackfield/ci-cd-aws/blob/main/images/aws.gif)
+
+## Jenkins - Continuous Integration
+
+Using Jenkins to set up a test environment, which is able to run the `Jest` tests on the application, if all tests pass when we can merge the changes with `main`.
+
+### GitHub Authentication
+
+Using PGP (Pretty Good Privacy), I was able to authorize Jenkins, write permissions to a repository. PGP uses Public/Private Key Pairs to allow secure authentication.
 ​
 
-## How have you use Jenkins to add Continuous integration with this project?
+### GitHub Webhook
 
+Using _GitHub Webhooks_ I was able to set up a webhook to make a Post request to my Jenkins endpoint, which would start the _Continuous Delivery_ Pipeline to build the application, implementing any changes.
 ​
 
-### How did you allow Jenkins access to the Github repo?
+## Jenkins - Continuous Delivery
 
-​
+​Using Jenkins to build the application by connecting to the `AWS EC2 Instance`.
 
-### How did you get the Github repo to trigger the build?
+### AWS Authentication
 
-## ​
+​Using PGP (Pretty Good Privacy), I was able to authorize Jenkins, write permissions to an `AWS EC2 Instance`.
 
-​
+### Triggering the Continuous Delivery Pipeline
 
-## How have you use Jenkins to add Continuous delivery with this project?
-
-​
-
-### How did you allow Jenkins access to the EC2 instance?
-
-​
-
-### How did you get the CI project to trigger the CD build?
-
-​
+Using a post-build action, which is triggered on a successful _Continuous Integration_.
